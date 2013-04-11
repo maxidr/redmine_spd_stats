@@ -15,4 +15,5 @@ Redmine::Plugin.register :redmine_spd_stats do
   # http://jsfiddle.net/PnUmM/1/
   # http://jsfiddle.net/veger/e4AUL/
   # http://techtalk.virendrachandak.com/sticky-header-and-footer-using-css/
+  # http://www.adhamdannaway.com/blog/web-design/css-sticky-footer-sticks-your-footer-to-the-bottom-of-the-page
 end
