@@ -8,12 +8,12 @@ $(document).ready(function() {
 
   $("#stats-bar .close_icon").on('click', function(e){
     hide_bar(true);
-    $.cookie('spd_stat_bar_close', 1);
+    $.cookie('spd_stat_bar_close', 1, { path:  '/' });
   });
 
   $("#stats-bar .open_icon").on('click', function(e){
     show_bar();
-    $.removeCookie('spd_stat_bar_close');
+    $.removeCookie('spd_stat_bar_close', { path: '/' });
   });
 });
 
