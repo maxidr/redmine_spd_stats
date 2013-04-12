@@ -3,7 +3,7 @@ body {margin: 0; padding: 0}
 
 #stats-bar-container { background:black; bottom:0; height:30px; left:0; position:fixed; width:100%; }
 /* #stats-bar { line-height:30px; margin:0 auto; width:940px; } */
-#stats-bar { line-height:30px; margin: 0 0 0 20px; width:940px; color:white; }
+#stats-bar { line-height:30px; padding: 0 0 0 20px; color:white; }
 
 /*
 #stats-bar{ width: 100%;  background: black; color: white; padding: 6px; position: relative; bottom: 0px; left: 0px; }
@@ -11,3 +11,9 @@ body {margin: 0; padding: 0}
 #stats-bar ul { margin: 0; padding: 0; display: inline; }
 #stats-bar li { float: left; list-style-type: none; margin: 0 15px 0 0; padding: 0; white-space: nowrap; }
 #stats-bar .title { float: left; display: inline; margin: 0 20px 0 0; font-weight: bold; }
+
+#stats-bar .show {display:inline}
+#stats-bar .hide {display:none}
+
+#stats-bar .open_icon {float:right;padding-right:10px;font-size:15px;font-weight:bold;}
+ 

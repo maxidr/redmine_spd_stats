@@ -1,37 +1,47 @@
-//$("").animate({left: "-600px");
-//$("").animate({left: "0px");
+$(document).ready(function() {
+  var size = $("#stats-bar-container").width() - 25;
+  var left_size_to_hide = "-" + size + "px";
+
+  if( $.cookie('spd_stat_bar_close') == 1 ){
+    hide_bar(false);
+  }
+
+  $("#stats-bar .close_icon").on('click', function(e){
+    hide_bar(true);
+    $.cookie('spd_stat_bar_close', 1);
+  });
+
+  $("#stats-bar .open_icon").on('click', function(e){
+    show_bar();
+    $.removeCookie('spd_stat_bar_close');
+  });
+});
 
 
-//$(".toggle_show").on('click', function(e){
-//  var arrow_size = 0; // El tamaño de la flecha
-//  var size = $("#stats-bar-container").width() - arrow_size;
-//  // agregar el icono de flecha para volver a mostrar la barra
-//  // ocultar o mostrar
-//});
+function show_open_icon(){
+  $("#stats-bar .open_icon").removeClass('hide').addClass('show');
+}
 
+function hide_open_icon(){
+  $("#stats-bar .open_icon").removeClass('show').addClass('hide');
+}
 
-//var sticky_offset;
-//var stats_bar_id = "#stats-bar";
-//
-//$(document).ready(function() {
-//  var original_position_offset = $(stats_bar_id).offset();
-//  sticky_offset = original_position_offset.top;
-//  $(stats_bar_id).css('position', 'fixed');
-//});
-//
-//$(window).scroll(function () {
-//  var sticky_height = $(stats_bar_id).outerHeight();
-//  var where_scroll = $(window).scrollTop();
-//  var window_height = $(window).height();
-//                 
-//
-//  if((where_scroll + window_height) > sticky_offset) {
-//    $(stats_bar_id).css('position', 'relative');
-//  }
-//                      
-//  if((where_scroll + window_height) < (sticky_offset + sticky_height))  {
-//    $(stats_bar_id).css('position', 'fixed');
-//  }
-//                          
-//});
-//
+function show_bar(){
+  $("#stats-bar-container").animate({left: "0px"});
+  hide_open_icon();
+}
+
+function hide_bar(animated){
+  if( animated ){
+    $("#stats-bar-container").animate(left_size_to_hide());
+  }else{
+    $("#stats-bar-container").css(left_size_to_hide());
+  }
+  show_open_icon();
+}
+
+function left_size_to_hide(){
+  var size = $("#stats-bar-container").width() - 25;
+  return {left: "-" + size + "px"};
+}
+
